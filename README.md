@@ -1,4 +1,5 @@
 # SDKX-Interstitial-Demo-kt
+This demo shows how to integrate Interstitial Ads into your App using SDKX.
 
 SDKX Version  [ ![Download](https://api.bintray.com/packages/greedygame/SDKX/com.greedygame.core/images/download.svg) ](https://bintray.com/greedygame/SDKX/com.greedygame.core/_latestVersion)
 
@@ -19,6 +20,8 @@ dependencies {
      implementation 'com.greedygame.sdkx:core:x.y.z'
 }
 ```
+
+Note: Interstitial Ads does auto refreshes/reloads themselves once closed by the user. So handle that case like in the demo given.
 
 # License
 The code for the sample app is provided under MIT License.
