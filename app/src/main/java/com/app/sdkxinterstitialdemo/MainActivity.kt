@@ -79,7 +79,10 @@ class MainActivity : AppCompatActivity() {
             showAdAgain()
         }
 
-        loadInterstitialAd()
+        binding.loadAd.setOnClickListener {
+            binding.progressBar.isVisible = true
+            loadInterstitialAd()
+        }
     }
 
     private fun showAdAgain() {
