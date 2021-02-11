@@ -13,7 +13,6 @@ import com.greedygame.core.interstitial.general.GGInterstitialEventsListener
 private const val TAG = "SecondActivity"
 class SecondActivity : AppCompatActivity() {
     private var ggInterstitialAd: GGInterstitialAd? = null
-    private var shouldShowAd = false
     private lateinit var binding: ActivitySecondBinding
 
     private val interstitialEventListener = object : GGInterstitialEventsListener {
@@ -24,7 +23,6 @@ class SecondActivity : AppCompatActivity() {
             // Setting flag to false to not show the ad again. This covers the case of opening
             // and ad that is already loaded
             Log.d(TAG, "Ad Closed - 2")
-            shouldShowAd = false
             startActivity(Intent(this@SecondActivity, MainActivity::class.java))
             finish()
         }
@@ -38,11 +36,8 @@ class SecondActivity : AppCompatActivity() {
         }
 
         override fun onAdLoaded() {
-            if(shouldShowAd){
-                // Setting flag to false to not show the ad again.
-                shouldShowAd = false
                 ggInterstitialAd?.show()
-            }
+
         }
 
         override fun onAdOpened() {
@@ -66,8 +61,6 @@ class SecondActivity : AppCompatActivity() {
         binding.showAgainButton.setOnClickListener {
             showAdAgain()
         }
-
-        loadInterstitialAd()
     }
 
     private fun showAdAgain() {
@@ -79,11 +72,11 @@ class SecondActivity : AppCompatActivity() {
             ggInterstitialAd?.show()
             return
         }
-        shouldShowAd = true
         loadInterstitialAd()
     }
 
     private fun loadInterstitialAd() {
-        ggInterstitialAd?.loadAd(listener = interstitialEventListener)
+        ggInterstitialAd?.setListener(interstitialEventListener)
+        ggInterstitialAd?.loadAd()
     }
 }
