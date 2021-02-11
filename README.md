@@ -21,7 +21,7 @@ dependencies {
 }
 ```
 
-Note: Interstitial Ads does auto refreshes/reloads themselves once closed by the user. So handle that case like in the demo given.
+Note: `GGInterstitialAd` no longer refreshes automatically once close starting with v0.0.86. GGInterstialAd will behave similar to Admob intersitial. If you still need the auto refresh feature, use `GGAutoRefreshInterstitialAd`
 
 # License
 The code for the sample app is provided under MIT License.
