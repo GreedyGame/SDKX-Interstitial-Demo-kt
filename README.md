@@ -1,7 +1,7 @@
 # SDKX-Interstitial-Demo-kt
 This demo shows how to integrate Interstitial Ads into your App using SDKX.
 
-SDKX Version  [ ![Download](https://api.bintray.com/packages/greedygame/SDKX/com.greedygame.core/images/download.svg) ](https://bintray.com/greedygame/SDKX/com.greedygame.core/_latestVersion)
+![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.greedygame.sdkx/core/badge.svg)
 
 # Integration
 Apps can easily integrate GreedyGame SDKX with Gradle
